@@ -5,6 +5,7 @@ public class ShoppingCart {
 	private long userID;
 	private double cartTotal;
 	
+	
 	public long getCartID() {
 		return cartID;
 	}
