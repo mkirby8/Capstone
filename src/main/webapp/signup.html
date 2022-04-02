@@ -19,16 +19,24 @@
                         <div class="column">
                             <div class="content is-vcentered">
                                 <h1 class="title is-1">Sign up</h1>
-                                <form>
+                                <form name="signup" method="post" action="AddUser">
+                                  
+                                    
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="email" placeholder="email or username">
+                                            <input class="input" type="text" name="username" placeholder="Username">
                                         </div>
                                     </div>
 
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="password" placeholder="password">
+                                            <input class="input" type="password" name="password" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="field">
+                                        <div class="control">
+                                            <input class="input" type="email" name="email" placeholder="Email">
                                         </div>
                                     </div>
 

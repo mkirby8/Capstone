@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,26 +10,52 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.User; 
 
-@WebServlet(description = "Creates new user", urlPatterns = { "/AddUser" })
+@WebServlet("/AddUser" )
 public class AddUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public AddUser() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		PrintWriter input = response.getWriter();
+		String formUsername = request.getParameter("username");
+		String formPassword = request.getParameter("password");
+		String formEmail = request.getParameter("email");
+		
+		if (formUsername != null && formPassword != null && formEmail != null) {
+			try {
+				User newUser = new User();
+				newUser.setUsername(formUsername);
+				newUser.setPassword(formPassword);
+				newUser.setEmail(formEmail);
+				
+				//boolean isUserRegistered = Admin.DbDAO.addNewUser(newUser);
+				
+				response.setContentType("text/html");
+				//if(isUserRegistered == true){
+					input.print("You are registered");
+					input.print("<a href='login.html'>Go to login</a>");
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				input.close();
+			}
+		}
+		else {
+			response.sendRedirect("signup.html");
+		}
+		
+		
+		
+		
 	}
 
 }
