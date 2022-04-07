@@ -9,6 +9,33 @@
 </head>
 
 <body>
+<section class="hero is-primary">
+    <div class="hero-body">
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item is-size-1">
+      Simply Shopping
+    </a>
+
+  </div>
+
+  <div id="navbar" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="mainStore.html">
+        Home
+      </a>
+
+      <a class="navbar-item" href="adminLogin.html">
+        Admin Login
+      </a>
+
+      
+    </div>
+
+  </div>
+</nav>
+</div>
+</section>
   <section class="hero is-fullheight">
     <div class="hero-body has-text-centered">
       <div class="container">
@@ -19,7 +46,7 @@
             <div class="column">
               <div class="content is-vcentered">
                 <h1 class="title is-1">Log in</h1>
-                <form>
+                <form name="login" method="post" action="UserLogin">
                   <div class="field">
                     <div class="control">
                       <input class="input" type="email" placeholder="email or username">
@@ -37,12 +64,13 @@
                       <button class="button is-primary is-rounded is-fullwidth">Login</button>
                     </div>
                   </div>
+                  </form>
                   <div class="field is-vcentered">
                     <div class="control">
-                      <button class="button is-primary is-light is-rounded is-fullwidth">Sign Up</button>
+                      <a href="signup.html"><button class="button is-primary is-light is-rounded is-fullwidth" >Sign Up</button></a>
                     </div>
                   </div>
-                </form>
+                
               </div>
             </div>
             <div class="column">

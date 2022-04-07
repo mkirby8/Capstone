@@ -4,18 +4,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Store Page</title>
+  <title>Simply Shopping Home Page</title>
   <link rel="stylesheet" href="Styles/bulma.css">
 </head>
 
 <body>
-  <section class="hero is-primary">
+<section class="hero is-primary">
     <div class="hero-body">
-      <p class="title">
-        Store Name
-      </p>
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item is-size-1">
+      Simply Shopping
+    </a>
+
+    
+  </div>
+
+  <div id="navbar" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="mainStore.html">
+        Home
+      </a>
+
+      <a class="navbar-item" href="adminLogin.html">
+        Admin Login
+      </a>
+ 	<a class="navbar-item" href="cart.html">
+        Shopping Cart
+      </a>
+      
     </div>
-  </section>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href="signup.html">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light" href="login.html">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+</div>
+</section>
+
   <div class="columns px-5 pt-5">
     <div class="column">
       <div class="box">
@@ -172,20 +208,8 @@
         </a>
       </div>
     </div>
-  </div>
-  <nav class="level">
-    <div class="level-item has-text-centered">
-      <nav class="pagination is-rounded is-center" role="navigation" aria-label="pagination">
-        <ul class="pagination-list">
-          <li>
-            <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
-  </nav>
-
+  
+</div>
 </body>
 
 </html>

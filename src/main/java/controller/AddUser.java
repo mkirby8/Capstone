@@ -37,10 +37,11 @@ public class AddUser extends HttpServlet {
 				
 				//boolean isUserRegistered = Admin.DbDAO.addNewUser(newUser);
 				
-				response.setContentType("text/html");
+				
 				//if(isUserRegistered == true){
-					input.print("You are registered");
-					input.print("<a href='login.html'>Go to login</a>");
+					//input.print("You are registered");
+					//input.print("<a href='login.html'>Go to login</a>");
+				response.sendRedirect("registrationSuccessful.html");
 			}
 			catch(Exception e) {
 				e.printStackTrace();
