@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin View Users Page</title>
+  <title>User View Info Page</title>
   <link rel="stylesheet" href="Styles/bulma.css">
 </head>
 
@@ -21,10 +21,12 @@
 
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="mainStore.html">
+      <a class="navbar-item" href="mainStore.jsp">
         Home
       </a>
-
+	<a class="navbar-item" href="cart.jsp">
+        Shopping Cart
+      </a>
       
     </div>
 

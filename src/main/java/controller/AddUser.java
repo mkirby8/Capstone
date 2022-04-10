@@ -40,8 +40,8 @@ public class AddUser extends HttpServlet {
 				
 				//if(isUserRegistered == true){
 					//input.print("You are registered");
-					//input.print("<a href='login.html'>Go to login</a>");
-				response.sendRedirect("registrationSuccessful.html");
+					//input.print("<a href='login.jsp'>Go to login</a>");
+				response.sendRedirect("registrationSuccessful.jsp");
 			}
 			catch(Exception e) {
 				e.printStackTrace();
@@ -51,7 +51,7 @@ public class AddUser extends HttpServlet {
 			}
 		}
 		else {
-			response.sendRedirect("signup.html");
+			response.sendRedirect("signup.jsp");
 		}
 		
 		

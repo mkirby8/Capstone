@@ -21,11 +21,11 @@
 
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="mainStore.html">
+      <a class="navbar-item" href="mainStore.jsp">
         Home
       </a>
 
-      <a class="navbar-item" href="adminLogin.html">
+      <a class="navbar-item" href="adminLogin.jsp">
         Admin Login
       </a>
 
@@ -47,9 +47,11 @@
               <div class="content is-vcentered">
                 <h1 class="title is-1">Log in</h1>
                 <form name="login" method="post" action="UserLogin">
+                <br>
+                    <p>${message}</p>
                   <div class="field">
                     <div class="control">
-                      <input class="input" type="email" placeholder="email or username">
+                      <input class="input" type="text" placeholder="username">
                     </div>
                   </div>
 
@@ -63,11 +65,13 @@
                     <div class="control">
                       <button class="button is-primary is-rounded is-fullwidth">Login</button>
                     </div>
+                    
+                    
                   </div>
                   </form>
                   <div class="field is-vcentered">
                     <div class="control">
-                      <a href="signup.html"><button class="button is-primary is-light is-rounded is-fullwidth" >Sign Up</button></a>
+                      <a href="signup.jsp"><button class="button is-primary is-light is-rounded is-fullwidth" >Sign Up</button></a>
                     </div>
                   </div>
                 

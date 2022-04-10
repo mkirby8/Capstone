@@ -21,11 +21,11 @@
 
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="mainStore.html">
+      <a class="navbar-item" href="mainStore.jsp">
         Home
       </a>
 
-      <a class="navbar-item" href="adminLogin.html">
+      <a class="navbar-item" href="adminLogin.jsp">
         Admin Login
       </a>
 
@@ -101,7 +101,7 @@
                                 </form>
                                 <div class="field is-vcentered">
                     <div class="control">
-                      <a href="login.html"><button class="button is-primary is-light is-rounded is-fullwidth" >Already registered? Login</button></a>
+                      <a href="login.jsp"><button class="button is-primary is-light is-rounded is-fullwidth" >Already registered? Login</button></a>
                     </div>
                   </div>
                             </div>

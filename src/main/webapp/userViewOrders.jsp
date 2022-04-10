@@ -21,10 +21,10 @@
 
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="mainStore.html">
+      <a class="navbar-item" href="mainStore.jsp">
         Home
       </a>
-	<a class="navbar-item" href="cart.html">
+	<a class="navbar-item" href="cart.jsp">
         Shopping Cart
       </a>
       

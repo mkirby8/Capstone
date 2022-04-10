@@ -22,7 +22,7 @@
 
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="mainStore.html">
+      <a class="navbar-item" href="mainStore.jsp">
         Home
       </a>
 
@@ -57,7 +57,7 @@
 
                   <div class="field is-vcenter">
                     <div class="control">
-                      <a href="adminHome.html"><button class="button is-primary is-rounded is-fullwidth">Login</button></a>
+                      <a href="adminHome.jsp"><button class="button is-primary is-rounded is-fullwidth">Login</button></a>
                
                     </div>
                   </div>

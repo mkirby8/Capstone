@@ -21,7 +21,7 @@
 
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="mainStore.html">
+      <a class="navbar-item" href="mainStore.jsp">
         Home
       </a>
 
@@ -43,10 +43,10 @@
     <div class="column is-one-quarter">
 	<div class="field is-grouped">
 	<p class="control">
-		<a href ="viewOrders.html"><button class="button is-link">View All Orders</button></a>
+		<a href ="viewOrders.jsp"><button class="button is-link">View All Orders</button></a>
 	</p>
 	<p class="control">	
-		<a href="viewUsers.html"><button class="button is-primary">View All Users</button></a>
+		<a href="viewUsers.jsp"><button class="button is-primary">View All Users</button></a>
 		</p>
 	</div>
 	</div>

@@ -21,11 +21,11 @@
 
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="mainStore.html">
+      <a class="navbar-item" href="mainStore.jsp">
         Home
       </a>
 
-      <a class="navbar-item" href="adminLogin.html">
+      <a class="navbar-item" href="adminLogin.jsp">
         Admin Login
       </a>
 
@@ -48,7 +48,7 @@
                             <div class="content is-vcentered">
                                 <div class="box">
                                     <p>Registration successful!</p>
-                                    <p>Return to <a href="login.html">Login</a></p>
+                                    <p>Return to <a href="login.jsp">Login</a></p>
                                 </div>
                             </div>
                         </div>

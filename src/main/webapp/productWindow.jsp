@@ -21,15 +21,15 @@
 
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="mainStore.html">
+      <a class="navbar-item" href="mainStore.jsp">
         Home
       </a>
 
-      <a class="navbar-item" href="adminLogin.html">
+      <a class="navbar-item" href="adminLogin.jsp">
         Admin Login
       </a>
 
-       <a class="navbar-item" href="cart.html">
+       <a class="navbar-item" href="cart.jsp">
         Shopping Cart
       </a>
     </div>
@@ -37,10 +37,10 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary" href="signup.html">
+          <a class="button is-primary" href="signup.jsp">
             <strong>Sign up</strong>
           </a>
-          <a class="button is-light" href="login.html">
+          <a class="button is-light" href="login.jsp">
             Log in
           </a>
         </div>
@@ -64,7 +64,6 @@
       <p class="pb-4">Price: </p>
       <div class="select">
       	<select>
-      		<option>XS</option>
       		<option>S</option>
       		<option>M</option>
       		<option>L</option>
@@ -81,7 +80,7 @@
         </select>
       </div>
       
-      <a href ="cart.html"><button class="button is-primary">Add to cart</button></a>
+      <a href ="cart.jsp"><button class="button is-primary">Add to cart</button></a>
       
     </div>
   </div>

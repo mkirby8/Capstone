@@ -21,10 +21,10 @@
 
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="mainStore.html">
+      <a class="navbar-item" href="mainStore.jsp">
         Home
       </a>
-	<a class="navbar-item" href="cart.html">
+	<a class="navbar-item" href="cart.jsp">
         Shopping Cart
       </a>
       
@@ -45,10 +45,10 @@
     <div class="column is-one-quarter">
 	<div class="field is-grouped">
 	<p class="control">
-		<a href ="userViewOrders.html"><button class="button is-link">View My Orders</button></a>
+		<a href ="userViewOrders.jsp"><button class="button is-link">View My Orders</button></a>
 	</p>
 	<p class="control">	
-		<a href="userViewInfo.html"><button class="button is-primary">View My Information</button></a>
+		<a href="userViewInfo.jsp"><button class="button is-primary">View My Information</button></a>
 		</p>
 	</div>
 	</div>
