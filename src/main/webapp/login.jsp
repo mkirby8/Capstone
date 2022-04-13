@@ -51,13 +51,13 @@
                     <p>${message}</p>
                   <div class="field">
                     <div class="control">
-                      <input class="input" type="text" placeholder="username">
+                      <input class="input" type="text" name="username" placeholder="username">
                     </div>
                   </div>
 
                   <div class="field">
                     <div class="control">
-                      <input class="input" type="password" placeholder="password">
+                      <input class="input" type="password" name="password" placeholder="password">
                     </div>
                   </div>
 

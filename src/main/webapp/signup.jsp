@@ -70,25 +70,31 @@
 
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" placeholder="Address Line 1">
+                                            <input class="input" type="text" name ="firstname" placeholder="First Name">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="field">
+                                        <div class="control">
+                                            <input class="input" type="text" name="lastname" placeholder="Last Name">
                                         </div>
                                     </div>
 
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" placeholder="Address Line 2">
+                                            <input class="input" type="text" name="address" placeholder="Address">
                                         </div>
                                     </div>
 
                                     <div class="field is-horizontal">
                                         <div class="field">
                                             <div class="control">
-                                                <input class="input" type="text" placeholder="ZIP">
+                                                <input class="input" type="text" name="zip" placeholder="ZIP">
                                             </div>    
                                         </div>
                                         <div class="field">
                                             <div class="control">
-                                                <input class="input" type="text" placeholder="Country">
+                                                <input class="input" type="text" name="country" placeholder="Country">
                                             </div>    
                                         </div>
                                     </div>
