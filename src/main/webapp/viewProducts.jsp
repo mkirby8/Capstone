@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin Home Page</title>
+  <title>Admin View Orders Page</title>
   <link rel="stylesheet" href="Styles/bulma.css">
 </head>
 
@@ -33,29 +35,42 @@
         <p>Admin View</p>
         </div>
       </div>
-      
   </div>
 </nav>
 </div>
 </section>
 
-<section class="section">
-<h1 class="title is-size-1 has-text-centered"> Admin  Home</h1>
+<form action="AdminViewProducts" method="get">
+<section>
+	<div class="container">
+	<div class="column is-full">
+	<table class="table is-striped is-fullwidth">
+		<thead>
+		<tr>
+			<th>Product Name</th>
+			<th>Size</th>
+			<th>Category</th>
+			<th>Price</th>
+			<th>Quantity</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+		<c:forEach items="${products}" var="product">
+		<tr>
+			<td><c:out value="${product.productName}"/></td>
+			<td><c:out value="${product.size}"/></td>
+			<td><c:out value="${product.category}"/></td>
+			<td>$<c:out value="${product.price}"/></td>
+			<td><c:out value="${product.quantity}"/></td>
+		</tr>	
+		</c:forEach>
+		</tbody>
+	</table>
+	</div>
+	</div>
+	
 </section>
-<section class = "section">
-<div class="container">
-  <div class="columns is-centered">
-    <div class="column is-one-third">
-	<div class="field is-grouped">
-		<a href ="viewOrders.jsp"><button class="button is-link">View All Orders</button></a>
-		<form action="AdminViewUsers" method="get"><button class="button">View All Users</button></form>
-		<a href="viewProducts.jsp"><button class="button is-primary">View All Products</button></a>
-	</div>
-	</div>
-	</div>
-	</div>
-
-
-</section>
+</form>
 </body>
 </html>

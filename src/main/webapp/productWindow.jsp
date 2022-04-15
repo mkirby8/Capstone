@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 
 <head>
@@ -9,6 +11,8 @@
 </head>
 
 <body>
+<c:if test="${sessionScope.username == null}">
+
 <section class="hero is-primary">
     <div class="hero-body">
 	<nav class="navbar" role="navigation" aria-label="main navigation">
@@ -17,6 +21,7 @@
       Simply Shopping
     </a>
 
+    
   </div>
 
   <div id="navbar" class="navbar-menu">
@@ -28,10 +33,13 @@
       <a class="navbar-item" href="adminLogin.jsp">
         Admin Login
       </a>
-
-       <a class="navbar-item" href="cart.jsp">
+      <a class="navbar-item" href="userHome.jsp">
+        User Profile
+      </a>
+ 	<a class="navbar-item" href="cart.jsp">
         Shopping Cart
       </a>
+      
     </div>
 
     <div class="navbar-end">
@@ -50,42 +58,99 @@
 </nav>
 </div>
 </section>
+</c:if>
+
+<c:if test="${sessionScope.username != null}">
+
+<section class="hero is-primary">
+    <div class="hero-body">
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item is-size-1">
+      Simply Shopping
+    </a>
+
+    
+  </div>
+
+  <div id="navbar" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="mainStore.jsp">
+        Home
+      </a>
+
+      <a class="navbar-item" href="adminLogin.jsp">
+        Admin Login
+      </a>
+      <a class="navbar-item" href="userHome.jsp">
+        User Profile
+      </a>
+ 	<a class="navbar-item" href="cart.jsp">
+        Shopping Cart
+      </a>
+      
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <p>Welcome, <%= request.getSession().getAttribute("username")%></p>
+        </div>
+      </div>
+    </div>
+  
+</nav>
+</div>
+</section>
+</c:if>
 
 <section class="section">
+
 <div class="container">
+
   <div class="columns is-vcentered">
-    <div class="column is-6">
-    <h1 class="title is-size-1 has-text-centered">Product Name</h1>
-         <img src="resources/temp.png" style="height:25vmax; width:100em">
     
+    <div class="column is-6">
+   
+    <h1 class="title is-size-1 has-text-centered"><c:out value="${product.productName}"/></h1>
+    <figure class="image is-square">
+         <img src="resources/${product.photo}" width="200" height="200">
+    </figure>
     </div>
+    
     <div class="column is-6 has-text-centered">
-      <div class="is-size-4 pb-4">Product description</div>
-      <p class="pb-4">Price: </p>
+      <div class="is-size-4 pb-4"><c:out value="${product.description}"/></div>
+      <p class="pb-4">$ <c:out value="${product.price}"/></p>
+      <form name="addtocart" method="post" action="AddToCart">
+      <c:set var="name" value="${product.productName}"/>
+      <input type="hidden" value="${product.productName}" name="productName"/>
       <div class="select">
-      	<select>
-      		<option>S</option>
-      		<option>M</option>
-      		<option>L</option>
-      		<option>XL</option>
+      	<select name="size">
+      		<option value="S">S</option>
+      		<option value="M">M</option>
+      		<option value="L">L</option>
+      		<option value="XL">XL</option>
       	</select>
       </div>
       <div class="select">
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
+        <select name="num">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
         </select>
       </div>
       
-      <a href ="cart.jsp"><button class="button is-primary">Add to cart</button></a>
-      
+      <button class="button is-primary">Add to cart</button>
+     </form>
     </div>
   </div>
-  </div>
+
+  
   </section>
+  
+  
+  
   
 </body>
 

@@ -3,6 +3,8 @@ package controller;
 import java.io.IOException;
 
 import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,36 +37,30 @@ public class AddUser extends HttpServlet {
 		String formZip = request.getParameter("zip");
 		String formCountry = request.getParameter("country");
 		
-		if (formUsername != null && formPassword != null && formEmail != null) {
-			try {
-				User newUser = new User();
-				newUser.setUsername(formUsername);
-				newUser.setPassword(formPassword);
-				newUser.setEmail(formEmail);
-				newUser.setFirstName(formFirstName);
-				newUser.setLastName(formLastName);
-				newUser.setAddress(formAddress);
-				newUser.setZip(formZip);
-				newUser.setCountry(formCountry);
+		
+		User newUser = new User();
+		newUser.setUsername(formUsername);
+		newUser.setPassword(formPassword);
+		newUser.setEmail(formEmail);
+		newUser.setFirstName(formFirstName);
+		newUser.setLastName(formLastName);
+		newUser.setAddress(formAddress);
+		newUser.setZip(formZip);
+		newUser.setCountry(formCountry);
 				
 				
-				if(UserAddDAO.addUser(newUser) == true){
-					response.sendRedirect("registrationSuccessful.jsp");
-				}
-			}
-			catch(Exception e) {
-				e.printStackTrace();
-			}
-			finally {
-				input.close();
-			}
+		if(UserAddDAO.addUser(newUser) == true){
+			RequestDispatcher rd = request.getRequestDispatcher("registrationSuccessful.jsp");
+			rd.forward(request, response);
 		}
+			
+		
 		else {
-			response.sendRedirect("signup.jsp");
-		}
-		
-		
-		
+			String message = "All areas required";
+            request.setAttribute("message", message);
+            RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
+            rd.forward(request, response);
+		}	
 		
 	}
 

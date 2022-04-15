@@ -1,7 +1,7 @@
 package controller;
 
 import java.io.IOException;
-import javax.servlet.http.*;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,27 +10,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.User;
-import dao.AdminDAO;
-import java.util.List;
-import java.util.ArrayList;
+import dao.ProductDAO;
+import model.Product;
 
 /**
- * Servlet implementation class AdminViewUsers
+ * Servlet implementation class ViewProduct
  */
-@WebServlet("/AdminViewUsers")
-public class AdminViewUsers extends HttpServlet {
+@WebServlet("/ViewProduct")
+public class ViewProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
+  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<User> allUsers = AdminDAO.viewUsers();
-	
-		request.setAttribute("users", allUsers);
-		RequestDispatcher rd = request.getRequestDispatcher("viewUsers.jsp");
-		rd.forward(request, response);
+		int pid = Integer.parseInt(request.getParameter("product"));
+		Product product = ProductDAO.viewProduct(pid);
 		
+		request.setAttribute("product", product);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("productWindow.jsp");
+		rd.forward(request, response);
 	}
 
 	

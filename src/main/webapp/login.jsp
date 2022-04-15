@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 
 <head>
@@ -36,6 +38,33 @@
 </nav>
 </div>
 </section>
+
+<c:if test="${sessionScope.username != null}">
+	<section class="hero is-fullheight">
+        <div class="hero-body has-text-centered">
+            <div class="container">
+                <div class="section is-vcentered ">
+                    <div class="columns">
+                        <div class="column">
+                        </div>
+                        <div class="column">
+                            <div class="content is-vcentered">
+                                <div class="box">
+                                    <p>You're already logged in!</p>
+                                    <p>Return to <a href="userHome.jsp">Profile</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</c:if>
+<c:if test="${sessionScope.username == null}">
+
   <section class="hero is-fullheight">
     <div class="hero-body has-text-centered">
       <div class="container">
@@ -48,7 +77,7 @@
                 <h1 class="title is-1">Log in</h1>
                 <form name="login" method="post" action="UserLogin">
                 <br>
-                    <p>${message}</p>
+                    <p class="has-text-danger">${message}</p>
                   <div class="field">
                     <div class="control">
                       <input class="input" type="text" name="username" placeholder="username">
@@ -85,6 +114,7 @@
       </div>
     </div>
   </section>
+  </c:if>
 </body>
 
 </html>

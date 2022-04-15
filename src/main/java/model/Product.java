@@ -1,18 +1,20 @@
 package model;
 
 public class Product {
-	private long productID;
+	private int productID;
 	private String productName;
 	private String size;
 	private String category;
 	private double price;
 	private String description;
+	private int quantity;
+	private String photo;
 	
-	public long getProductID() {
+	public int getProductID() {
 		return productID;
 	}
 	
-	public void setProductID(long productID) {
+	public void setProductID(int productID) {
 		this.productID = productID;
 	}
 	
@@ -28,7 +30,7 @@ public class Product {
 		return size;
 	}
 	
-	public void setSise(String size) {
+	public void setSize(String size) {
 		this.size = size;
 	}
 	
@@ -54,5 +56,21 @@ public class Product {
 	
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+	
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	
+	public String getPhoto() {
+		return photo;
+	}
+	
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 }

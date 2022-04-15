@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import javax.servlet.http.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,31 +8,31 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import model.User;
 import dao.AdminDAO;
-import java.util.List;
-import java.util.ArrayList;
+import model.User;
 
 /**
- * Servlet implementation class AdminViewUsers
+ * Servlet implementation class UserViewInfo
  */
-@WebServlet("/AdminViewUsers")
-public class AdminViewUsers extends HttpServlet {
+@WebServlet("/UserViewInfo")
+public class UserViewInfo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<User> allUsers = AdminDAO.viewUsers();
-	
-		request.setAttribute("users", allUsers);
-		RequestDispatcher rd = request.getRequestDispatcher("viewUsers.jsp");
+		HttpSession session = request.getSession();
+		String username = (String)session.getAttribute("username");
+		
+		User userInfo = AdminDAO.viewInfo(username);
+		request.setAttribute("info", userInfo);
+		RequestDispatcher rd = request.getRequestDispatcher("userViewInfo.jsp");
 		rd.forward(request, response);
 		
 	}
 
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

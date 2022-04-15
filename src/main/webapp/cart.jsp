@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 
 <head>
@@ -33,23 +35,42 @@
 
       
     </div>
-
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary" href="signup.jsp">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light" href="login.jsp">
-            Log in
-          </a>
+        <p>Welcome, <%= request.getSession().getAttribute("username")%></p>
         </div>
       </div>
     </div>
-  </div>
+
+  
 </nav>
 </div>
 </section>
+
+<c:if test="${sessionScope.username == null}">
+	<section class="hero is-fullheight">
+        <div class="hero-body has-text-centered">
+            <div class="container">
+                <div class="section is-vcentered ">
+                    <div class="columns">
+                        <div class="column">
+                        </div>
+                        <div class="column">
+                            <div class="content is-vcentered">
+                                <div class="box">
+                                    <p>To continue, please <a href="login.jsp">Login</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</c:if>
+<c:if test="${sessionScope.username != null}">
 
   <section class="hero is-fullheight">
     <div class="hero-body has-text-centered">
@@ -130,10 +151,13 @@
 
             </div>
             <div class="column is-one-third is-full has-text-left">
-              <div id="purchace">
+              <div id="purchase">
                 <h1 class="title is-1 has-text-centered">Total</h1>
                   <p>Total cost: </p>
                   <p>Delivery Address: </p>
+                  <br>
+                  <br>
+                  <a href="confirmation.jsp"><button class="button is-primary">Place Order</button></a>
               </div>
             </div>
             
@@ -142,6 +166,7 @@
       </div>
     </div>
   </section>
+  </c:if>
 </body>
 
 </html>

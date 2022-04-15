@@ -30,15 +30,13 @@ public class UserLogin extends HttpServlet {
 		// TODO Auto-generated method stub
 		String formUsername = request.getParameter("username");
         String formPassword = request.getParameter("password");
-        System.out.println(formUsername);
-        System.out.println(formPassword);
         
-        //HttpSession session = request.getSession(false);
-        //if(session != null) {
-        //	session.setAttribute("username", username);
-        //}
         
         if (UserLoginDAO.checkLogin(formUsername, formPassword) == true) {
+        	HttpSession session = request.getSession();
+        	session.setAttribute("username", formUsername);
+        	String message = "Welcome, " + formUsername;
+        	request.setAttribute("message", message);
         	RequestDispatcher rd = request.getRequestDispatcher("userHome.jsp");
         	rd.forward(request, response);
         }

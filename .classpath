@@ -14,5 +14,9 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="/Users/kirbyml/Downloads/mysql-connector-java-8.0.23.zip"/>
+	<classpathentry kind="lib" path="/Users/kirbyml/Downloads/jakarta.servlet.jsp.jstl-api-2.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/kirbyml/Downloads/jakarta.servlet.jsp.jstl-2.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/kirbyml/Downloads/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/kirbyml/Downloads/jstl-1.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

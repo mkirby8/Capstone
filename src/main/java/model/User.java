@@ -1,7 +1,7 @@
 package model;
 
 public class User {
-	private long userID;
+	private int userID;
 	private String username;
 	private String password;
 	private String email;
@@ -11,11 +11,11 @@ public class User {
 	private String zip;
 	private String country;
 	
-	public long getUserID() {
+	public int getUserID() {
 		return userID;
 	}
 	
-	public void setUserID(long userID) {
+	public void setUserID(int userID) {
 		this.userID = userID;
 	}
 	

@@ -27,7 +27,7 @@
                             <div class="content is-vcentered">
                                 <div class="box">
                                     <p>Your order <a href="somerandomlink" id="order number">#123123123</a> has been confirmed</p>
-                                    <p>Track your order <a href="some random link" id="tracking link">here</a></p>
+                                    <p>Return to your <a href="userHome.jsp">profile</a></p>
                                 </div>
                             </div>
                         </div>

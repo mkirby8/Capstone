@@ -48,6 +48,8 @@
                             <div class="content is-vcentered">
                                 <h1 class="title is-1">Sign up</h1>
                                 <form name="signup" method="post" action="AddUser">
+                                  <br>
+                                                      <p class="has-text-danger">${message}</p>
                                   
                                     
                                     <div class="field">
