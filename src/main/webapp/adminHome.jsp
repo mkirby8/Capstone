@@ -47,9 +47,9 @@
   <div class="columns is-centered">
     <div class="column is-one-third">
 	<div class="field is-grouped">
-		<a href ="viewOrders.jsp"><button class="button is-link">View All Orders</button></a>
+		<form action="AdminViewOrders" method="get"><button class="button is-link">View All Orders</button></form>
 		<form action="AdminViewUsers" method="get"><button class="button">View All Users</button></form>
-		<a href="viewProducts.jsp"><button class="button is-primary">View All Products</button></a>
+		<form action="AdminViewProducts" method="get"><button class="button is-primary">View All Products</button></form>
 	</div>
 	</div>
 	</div>

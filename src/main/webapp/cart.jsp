@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <html>
 
@@ -71,6 +73,7 @@
     </section>
 </c:if>
 <c:if test="${sessionScope.username != null}">
+<c:if test="${sessionScope.cart != null}">
 
   <section class="hero is-fullheight">
     <div class="hero-body has-text-centered">
@@ -79,93 +82,76 @@
           <div class="columns">
             <div class="column is-two-thirds">
 
+              
+<c:forEach items="${cart}" var="item">
+<c:set var="cartTotal" value="${cartTotal + (item.product.price * item.quantity)}"></c:set>
+<input type="hidden" value="${cartTotal + (item.product.price * item.quantity)}" name="cartTotal"/>
               <div class="box has-text-left">
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-64x64">
-                      <img src="resources/temp.png" alt="Image">
+                      <img src="resources/${item.product.photo}" alt="Image">
                     </figure>
                   </div>
                   <div class="media-content">
-                    <p>Item Description: </p>
-                    <p>Price: </p>
+                    <p>Item: <c:out value="${item.product.productName}"/> (<c:out value="${item.product.category}"/>)</p>
+                    <p>Size: <c:out value="${item.product.size}"/></p>
+                    <p>Price: $<fmt:formatNumber type="number" pattern="0.00" value="${item.product.price * item.quantity}"/> </p>
+                    <p>Quantity: <c:out value="${item.quantity}"/></p>
+                  </div>
+                  <div class="media-right">
+                  	<form action="RemoveFromCart" method="get"><button class="delete is-large" type="submit" name="productID" value="${item.product.productID}"></button></form>
                   </div>
                 </div>
               </div>
+              </c:forEach>
 
-              <div class="box has-text-left">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-64x64">
-                      <img src="resources/temp.png" alt="Image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p>Item Description: </p>
-                    <p>Price: </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="box has-text-left">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-64x64">
-                      <img src="resources/temp.png" alt="Image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p>Item Description: </p>
-                    <p>Price: </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="box has-text-left">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-64x64">
-                      <img src="resources/temp.png" alt="Image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p>Item Description: </p>
-                    <p>Price: </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="box has-text-left">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-64x64">
-                      <img src="resources/temp.png" alt="Image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p>Item Description: </p>
-                    <p>Price: </p>
-                  </div>
-                </div>
-              </div>
+              
 
             </div>
-            <div class="column is-one-third is-full has-text-left">
+            <div class="column is-one-third is-full has-text-centered">
               <div id="purchase">
-                <h1 class="title is-1 has-text-centered">Total</h1>
-                  <p>Total cost: </p>
-                  <p>Delivery Address: </p>
+                <h1 class="title is-1 has-text-centered">Total Cost</h1>
+                  <p>$<fmt:formatNumber type="number" pattern="0.00" value="${cartTotal}"/></p>
                   <br>
                   <br>
-                  <a href="confirmation.jsp"><button class="button is-primary">Place Order</button></a>
+                  <form action="OrderConfirmation" method="get"><button class="button is-primary">Place Order</button></form>
               </div>
+              <br>
+                <p class="has-text-danger">${message}</p>
+              
             </div>
+            
             
           </div>
         </div>
       </div>
     </div>
   </section>
+  </c:if>
+  <c:if test="${sessionScope.cart == null}">
+	<section class="hero is-fullheight">
+        <div class="hero-body has-text-centered">
+            <div class="container">
+                <div class="section is-vcentered ">
+                    <div class="columns">
+                        <div class="column">
+                        </div>
+                        <div class="column">
+                            <div class="content is-vcentered">
+                                <div class="box">
+                                    <p>Your cart is empty!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</c:if>
   </c:if>
 </body>
 

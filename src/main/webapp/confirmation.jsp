@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 
 <head>
@@ -25,10 +27,15 @@
                         </div>
                         <div class="column">
                             <div class="content is-vcentered">
+                            <form action="OrderConfirmation" method="get">
                                 <div class="box">
-                                    <p>Your order <a href="somerandomlink" id="order number">#123123123</a> has been confirmed</p>
+                                    <p>Your order <a href="somerandomlink" id="order number">#<c:out value="${orderid}"/></a> has been confirmed</p>
+                                    <p>Delivery Address: </p>
+                                    <p><c:out value="${info.address}"/></p>
+                  					<p><c:out value="${info.zip}"/> <c:out value="${info.country }"/></p>
                                     <p>Return to your <a href="userHome.jsp">profile</a></p>
                                 </div>
+                                </form>
                             </div>
                         </div>
                         <div class="column">

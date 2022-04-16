@@ -53,7 +53,7 @@
   <div class="columns is-centered">  
     <div class="column is-one-third">
 	<div class="field is-grouped">
-		<a href ="userViewOrders.jsp"><button class="button is-link">View My Orders</button></a>
+		<form action="UserViewOrders" method="get"><button class="button is-link">View My Orders</button></form>
 
 		<form action="UserViewInfo" method="get"><button class="button is-primary">View My Information</button></form>
 		

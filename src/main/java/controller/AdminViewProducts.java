@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.AdminDAO;
 import model.Product;
-import java.util.List;
 
 /**
  * Servlet implementation class AdminViewProducts
@@ -23,16 +22,16 @@ public class AdminViewProducts extends HttpServlet {
        
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		List<Product> allProducts = AdminDAO.viewProducts();
 		
 		request.setAttribute("products", allProducts);
 		RequestDispatcher rd = request.getRequestDispatcher("viewProducts.jsp");
-		rd.forward(request, response);	}
+		rd.forward(request, response);	
+		}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

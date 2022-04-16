@@ -1,25 +1,28 @@
 package model;
 
+
+
 public class Order {
-	private long orderID;
-	private long userID;
+	private int orderID;
+	private String username;
 	private double orderTotal;
 	
-	public long getOrderID() {
+	public int getOrderID() {
 		return orderID;
 	}
 	
-	public void setOrderID(long orderID) {
+	public void setOrderID(int orderID) {
 		this.orderID = orderID;
 	}
 	
-	public long getUserID() {
-		return userID;
+	public String getUsername() {
+		return username;
 	}
 	
-	public void setUserID(long userID) {
-		this.userID = userID;
+	public void setUsername(String username) {
+		this.username = username;
 	}
+	
 	
 	public double getOrderTotal() {
 		return orderTotal;

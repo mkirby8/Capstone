@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import model.Product;
 import model.User;
+import model.Order;
 
 
 public class AdminDAO {
@@ -80,6 +81,7 @@ public class AdminDAO {
 			
 			rs = ps.executeQuery();
 			if (rs.next()) {
+				int uid = rs.getInt("userid");
 				String un = rs.getString("username");
 				String email = rs.getString("email");
 				String firstName = rs.getString("firstname");
@@ -88,6 +90,7 @@ public class AdminDAO {
 				String zip = rs.getString("zip");
 				String country = rs.getString("country");
 				
+				user.setUserID(uid);
 				user.setUsername(un);
 				user.setEmail(email);
 				user.setFirstName(firstName);
@@ -134,7 +137,7 @@ public class AdminDAO {
 				String name = rs.getString("productname");
 				String size = rs.getString("size");
 				String category = rs.getString("category");
-				String price = rs.getString("price");
+				double price = rs.getDouble("price");
 				String description = rs.getString("description");
 				int quantity = rs.getInt("quantity");
 				String photo = rs.getString("photo");
@@ -158,5 +161,46 @@ public class AdminDAO {
 			System.out.println(e);
 		}
 		return productList;
+	}
+	
+	public static List<Order> viewOrders(){
+		List<Order> allOrders = new ArrayList<Order>();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		String jdbcURL = "jdbc:mysql://localhost:3306/ShopDB";
+		String dbUser = "root";
+		String dbPassword = "root1234";
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+			
+			String sql = "SELECT * FROM ShopDB.order_details";
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery(sql);
+			
+			while (rs.next()) {
+				Order newOrder = new Order();
+				
+				int orderID = rs.getInt("orderid");
+				String name = rs.getString("username");
+				double total = rs.getDouble("ordertotal");
+				
+				newOrder.setOrderID(orderID);
+				newOrder.setUsername(name);
+				newOrder.setOrderTotal(total);
+				
+				allOrders.add(newOrder);
+			}
+			conn.close();
+	        ps.close();	
+	        rs.close();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		return allOrders;
 	}
 }

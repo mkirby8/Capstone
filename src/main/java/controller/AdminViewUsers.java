@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import javax.servlet.http.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import model.User;
 import dao.AdminDAO;
 import java.util.List;
-import java.util.ArrayList;
 
 /**
  * Servlet implementation class AdminViewUsers
@@ -24,7 +22,7 @@ public class AdminViewUsers extends HttpServlet {
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		List<User> allUsers = AdminDAO.viewUsers();
 	
 		request.setAttribute("users", allUsers);
@@ -35,7 +33,6 @@ public class AdminViewUsers extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

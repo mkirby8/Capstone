@@ -2,8 +2,7 @@ package dao;
 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 import java.sql.*;
 
 import model.User;
@@ -13,11 +12,11 @@ public class UserAddDAO {
 	public static boolean addUser(User user) {
 		boolean status = false;
 		Connection conn = null;
-		PreparedStatement ps = null;
+		PreparedStatement ps = null; 
 		
-		String jdbcURL = "jdbc:mysql://localhost:3306/ShopDB";
-		String dbUser = "root";
-		String dbPassword = "root1234";
+		String jdbcURL = "jdbc:mysql://localhost:3306/ShopDB"; 
+		String dbUser = "root"; 
+		String dbPassword = "root1234"; 
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

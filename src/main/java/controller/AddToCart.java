@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import dao.ProductDAO;
 import model.Product;
 import model.CartItem;
+import java.util.List;
+import java.util.ArrayList;
 import javax.servlet.http.*;
 
 /**
@@ -21,16 +25,18 @@ public class AddToCart extends HttpServlet {
        
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// 
 		doPost(request,response);
 	}
 
 	
+	@SuppressWarnings("unchecked")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String size = request.getParameter("size");
 		int quantity = Integer.parseInt(request.getParameter("num"));
 		String name = request.getParameter("productName");
+		List<CartItem> cart = new ArrayList<CartItem>();
+
 		
 		HttpSession session = request.getSession();
 		if(session.getAttribute("username") == null){
@@ -40,7 +46,22 @@ public class AddToCart extends HttpServlet {
 		else {
 			Product product = new Product();
 			product = ProductDAO.findProduct(name, size);
-			CartItem newItem = new CartItem(product, quantity);
+			CartItem newItem = new CartItem();
+			newItem.setProduct(product);
+			newItem.setQuantity(quantity);
+			if (session.getAttribute("cart") == null) {
+				cart.add(newItem);
+				session.setAttribute("cart", cart);
+			}
+			else {
+				cart = (List<CartItem>) session.getAttribute("cart");
+				cart.add(newItem);
+				session.setAttribute("cart", cart);
+			}
+			
+			request.setAttribute("cart", cart);
+			RequestDispatcher rd = request.getRequestDispatcher("cart.jsp");
+			rd.forward(request, response);
 		}
 		
 		

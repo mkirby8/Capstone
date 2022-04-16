@@ -5,10 +5,6 @@ public class CartItem {
 	private int quantity;
 	private double price;
 	
-	public CartItem(Product product, int quantity) {
-		this.product = product;
-		this.quantity = quantity;
-	}
 	
 	public Product getProduct() {
 		return product;

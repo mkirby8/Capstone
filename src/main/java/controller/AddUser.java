@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,14 +19,12 @@ public class AddUser extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doPost(request, response);
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		PrintWriter input = response.getWriter();
 		String formUsername = request.getParameter("username");
 		String formPassword = request.getParameter("password");
 		String formEmail = request.getParameter("email");

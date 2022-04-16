@@ -111,7 +111,7 @@
     
     <div class="column is-6">
    
-    <h1 class="title is-size-1 has-text-centered"><c:out value="${product.productName}"/></h1>
+    <h1 class="title is-size-1 has-text-centered"><c:out value="${product.productName}"/> (<c:out value="${product.category}"/>)</h1>
     <figure class="image is-square">
          <img src="resources/${product.photo}" width="200" height="200">
     </figure>
@@ -146,7 +146,7 @@
     </div>
   </div>
 
-  
+ </div> 
   </section>
   
   

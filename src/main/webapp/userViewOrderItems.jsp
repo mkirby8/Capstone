@@ -45,34 +45,55 @@
     </nav>
   </div>
 </section>
-<form action="UserViewOrderItems" method="get">
-<section>
-	<div class="container">
-	<div class="column is-full">
-	<table class="table is-striped is-fullwidth">
-		<thead>
-		<tr>
-			<th>Order ID</th>
-			<th>Total</th>
-			<th class="has-text-right">View Items</th>
-		</tr>
-		</thead>
-		<tbody>
-		
-		<c:forEach items="${info}" var="order">
-		<tr>
-			<td><c:out value="${order.orderID}"/></td>
-			<td><fmt:formatNumber type="number" pattern="0.00" value="${order.orderTotal}"/></td>
-			<td class="has-text-right"><button type="submit" name="orderID" value="${order.orderID}" class="button is-link is-right">View Order</button></td>
-		</c:forEach>
-		</tbody>
-	</table>
-	</div>
-	</div>
-	
-</section>
-</form>
-</c:if>
+<section class="hero is-fullheight">
+    <div class="hero-body has-text-centered">
+      <div class="container">
+        <div class="section is-vcentered ">
+          <div class="columns">
+            <div class="column is-two-thirds">
+
+              
+<c:forEach items="${info}" var="item">
+<c:set var="cartTotal" value="${cartTotal + (item.price * item.quantity)}"></c:set>
+<input type="hidden" value="${cartTotal + (item.price * item.quantity)}" name="cartTotal"/>
+              <div class="box has-text-left">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-64x64">
+                      <img src="resources/${item.product.photo}" alt="Image">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p>Item: <c:out value="${item.product.productName}"/> (<c:out value="${item.product.category}"/>)</p>
+                    <p>Size: <c:out value="${item.product.size}"/></p>
+                    <p>Price: $<fmt:formatNumber type="number" pattern="0.00" value="${item.price * item.quantity}"/> </p>
+                    <p>Quantity: <c:out value="${item.quantity}"/></p>
+                  </div>
+                </div>
+              </div>
+              </c:forEach>
+
+              
+
+            </div>
+            <div class="column is-one-third is-full has-text-centered">
+              <div id="purchase">
+                <h1 class="title is-1 has-text-centered">Total Cost</h1>
+                  <p>$<fmt:formatNumber type="number" pattern="0.00" value="${cartTotal}"/></p>
+                  <br>
+                  <br>
+              </div>
+              <br>
+              
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </c:if>
   <c:if test="${sessionScope.username == null}">
 
 <section class="hero is-primary">

@@ -1,7 +1,8 @@
 package controller;
 
 import java.io.IOException;
-import javax.servlet.http.*;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,24 +10,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.OrderDAO;
+import model.CartItem;
+
 /**
- * Servlet implementation class UserLogout
+ * Servlet implementation class UserViewOrderItems
  */
-@WebServlet("/UserLogout")
-public class UserLogout extends HttpServlet {
+@WebServlet("/UserViewOrderItems")
+public class UserViewOrderItems extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession();
-		session.invalidate();
+		int orderID = Integer.parseInt(request.getParameter("orderID"));
 		
-		RequestDispatcher rd = request.getRequestDispatcher("logoutSuccessful.jsp");
+		List<CartItem> orderItems = OrderDAO.viewOrderItems(orderID);
+	
+		request.setAttribute("info", orderItems);
+		RequestDispatcher rd = request.getRequestDispatcher("userViewOrderItems.jsp");
 		rd.forward(request, response);
 	}
-
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
