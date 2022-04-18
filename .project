@@ -28,11 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>sql/io64wq7jxkqkvcbo.sql</name>
-			<type>1</type>
-			<location>/Users/kirbyml/Documents/Valencia/Spring Semester 2022/Capstone/io64wq7jxkqkvcbo.sql</location>
-		</link>
-	</linkedResources>
 </projectDescription>
