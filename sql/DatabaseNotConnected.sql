@@ -1,4 +1,4 @@
--- MySQL Database Design
+-- MySQL Database Design created in MySQLWorkbench
 
 -- MySQL dump 10.13  Distrib 8.0.22, for macos10.15 (x86_64)
 --
