@@ -14,32 +14,31 @@ public class OrderDAO {
 			Connection conn = null;
 			PreparedStatement ps, ps2 = null;
 			ResultSet rs = null;
-			int id = 0;
+			int key = 0;
 			
-			String jdbcURL = "jdbc:mysql://localhost:3306/ShopDB"; 
-			String dbUser = "root"; 
-			String dbPassword = "root1234"; 
+			String jdbcURL = "jdbc:mysql://htiz97hf42xltwv3:sps64uspk6muhrrl@en1ehf30yom7txe7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/io64wq7jxkqkvcbo";
+			String dbUser = "htiz97hf42xltwv3";
+			String dbPassword = "sps64uspk6muhrrl"; 
 			
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				conn = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 				
-				String sql = "INSERT INTO ShopDB.order_details (username, ordertotal) VALUES (?, ?)";
+				String sql = "INSERT INTO io64wq7jxkqkvcbo.order_details (username, ordertotal) VALUES (?, ?)";
 				ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 				ps.setString(1, user.getUsername());
 				ps.setDouble(2, cartTotal); 
 				ps.executeUpdate();
 				
 				rs = ps.getGeneratedKeys();
-				int generatedKey = 0;
 				if (rs.next()) {
-					generatedKey = rs.getInt(1);
+					key = rs.getInt(1);
 				}
 				
 				for (CartItem item : cart) {
-				String sql2 = "INSERT INTO ShopDB.orders (orderid, product, size, quantity, price) VALUES (?, ?, ?, ?, ?)";
+				String sql2 = "INSERT INTO io64wq7jxkqkvcbo.orders (orderid, product, size, quantity, price) VALUES (?, ?, ?, ?, ?)";
 				ps2 = conn.prepareStatement(sql2);
-				ps2.setInt(1, generatedKey);
+				ps2.setInt(1, key);
 				ps2.setString(2, item.getProduct().getProductName());
 				ps2.setString(3, item.getProduct().getSize());
 				ps2.setInt(4, item.getQuantity());
@@ -47,7 +46,6 @@ public class OrderDAO {
 				ps2.executeUpdate();
 				}
 				
-				id = generatedKey;
 				
 				conn.close();
 		        ps.close();	
@@ -58,7 +56,7 @@ public class OrderDAO {
 				System.out.println(e);
 			}
 			
-			return id;
+			return key;
 		}
 		
 		
@@ -68,16 +66,16 @@ public class OrderDAO {
 			ResultSet rs = null;
 			List<Order> orderList = new ArrayList<Order>();
 			
-			String jdbcURL = "jdbc:mysql://localhost:3306/ShopDB";
-			String dbUser = "root";
-			String dbPassword = "root1234";
+			String jdbcURL = "jdbc:mysql://htiz97hf42xltwv3:sps64uspk6muhrrl@en1ehf30yom7txe7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/io64wq7jxkqkvcbo";
+			String dbUser = "htiz97hf42xltwv3";
+			String dbPassword = "sps64uspk6muhrrl";
 			
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				conn = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 				
 				
-				String sql = "SELECT * FROM ShopDB.order_details WHERE username = ?";
+				String sql = "SELECT * FROM io64wq7jxkqkvcbo.order_details WHERE username = ?";
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, username);
 				
@@ -113,16 +111,16 @@ public class OrderDAO {
 			PreparedStatement ps = null;
 			ResultSet rs = null;
 			
-			String jdbcURL = "jdbc:mysql://localhost:3306/ShopDB";
-			String dbUser = "root";
-			String dbPassword = "root1234";
+			String jdbcURL = "jdbc:mysql://htiz97hf42xltwv3:sps64uspk6muhrrl@en1ehf30yom7txe7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/io64wq7jxkqkvcbo";
+			String dbUser = "htiz97hf42xltwv3";
+			String dbPassword = "sps64uspk6muhrrl";
 			
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				conn = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 				
 				
-				String sql = "SELECT * FROM ShopDB.orders WHERE orderid = ?";
+				String sql = "SELECT * FROM io64wq7jxkqkvcbo.orders WHERE orderid = ?";
 				ps = conn.prepareStatement(sql);
 				ps.setInt(1, orderID);
 				
@@ -136,8 +134,7 @@ public class OrderDAO {
 					int quantity = rs.getInt("quantity");
 					double price = rs.getDouble("price");
 					
-					product.setProductName(name);
-					product.setSize(size);
+					product = ProductDAO.findProduct(name, size);
 					item.setProduct(product);
 					item.setQuantity(quantity);
 					item.setPrice(price);

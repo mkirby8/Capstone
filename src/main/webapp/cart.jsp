@@ -13,6 +13,48 @@
 </head>
 
 <body>
+<c:if test="${sessionScope.username != null}">
+
+<section class="hero is-primary">
+    <div class="hero-body">
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item is-size-1">
+      Simply Shopping
+    </a>
+
+  </div>
+
+
+  <div id="navbar" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="mainStore.jsp">
+        Home
+      </a>
+
+      <a class="navbar-item" href="adminLogin.jsp">
+        Admin Login
+      </a>
+      <a class="navbar-item" href="userHome.jsp">
+        User Profile
+      </a>
+
+      
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <p>Welcome, <%= request.getSession().getAttribute("username")%></p>
+        </div>
+      </div>
+    </div>
+
+  
+</nav>
+</div>
+</section>
+</c:if>
+
+<c:if test="${sessionScope.username == null}">
 <section class="hero is-primary">
     <div class="hero-body">
 	<nav class="navbar" role="navigation" aria-label="main navigation">
@@ -37,19 +79,12 @@
 
       
     </div>
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <p>Welcome, <%= request.getSession().getAttribute("username")%></p>
-        </div>
-      </div>
-    </div>
 
+</div>
   
 </nav>
 </div>
 </section>
-
-<c:if test="${sessionScope.username == null}">
 	<section class="hero is-fullheight">
         <div class="hero-body has-text-centered">
             <div class="container">

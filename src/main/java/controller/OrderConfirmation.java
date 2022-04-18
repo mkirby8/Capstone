@@ -28,7 +28,6 @@ public class OrderConfirmation extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		String username = (String)session.getAttribute("username");
-		@SuppressWarnings("unchecked")
 		List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
 		
 		double cartTotal = 0.0;

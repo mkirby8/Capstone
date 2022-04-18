@@ -109,12 +109,12 @@
   <div class="columns px-5 pt-5">
     <div class="column">
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=44"><input type="image" src="resources/blackLeggings.jpeg" width="200" height="200"/>
        </a>
       </div>
 
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=48"><input type="image" src="resources/jeanShorts.jpeg" width="200" height="200"/>
        </a>
       </div>
 
@@ -122,12 +122,12 @@
 
     <div class="column">
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=52"><input type="image" src="resources/redSkirt.jpeg" width="200" height="200"/>
        </a>
       </div>
 
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=56"><input type="image" src="resources/whitePants.jpeg" width="200" height="200"/>
        </a>
       </div>
 
@@ -135,25 +135,12 @@
 
     <div class="column">
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=60"><input type="image" src="resources/whiteDress.jpeg" width="200" height="200"/>
        </a>
       </div>
 
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
-       </a>
-      </div>
-
-    </div>
-
-    <div class="column">
-      <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
-       </a>
-      </div>
-
-      <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=64"><input type="image" src="resources/floralDress.jpeg" width="200" height="200"/>
        </a>
       </div>
 
@@ -161,12 +148,25 @@
 
     <div class="column">
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=68"><input type="image" src="resources/yellowSweater.jpeg" width="200" height="200"/>
        </a>
       </div>
 
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=72"><input type="image" src="resources/stripedShirt.jpeg" width="200" height="200"/>
+       </a>
+      </div>
+
+    </div>
+
+    <div class="column">
+      <div class="box">
+        <a href="ViewProduct?product=76"><input type="image" src="resources/orangeCardigan.jpeg" width="200" height="200"/>
+       </a>
+      </div>
+
+      <div class="box">
+        <a href="ViewProduct?product=80"><input type="image" src="resources/denimJacket.jpeg" width="200" height="200"/>
        </a>
       </div>
 
@@ -181,12 +181,12 @@
   <div class="columns px-5 pt-5">
     <div class="column">
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=4"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
        </a>
       </div>
 
       <div class="box">
-        <a href="ViewProduct?product=6"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=8"><input type="image" src="resources/darkJeans.jpeg" width="200" height="200"/>
        </a>
       </div>
 
@@ -194,12 +194,12 @@
 
     <div class="column">
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=12"><input type="image" src="resources/graySweats.jpeg" width="200" height="200"/>
        </a>
       </div>
 
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=16"><input type="image" src="resources/yellowTrousers.jpeg" width="200" height="200"/>
        </a>
       </div>
 
@@ -207,25 +207,12 @@
 
     <div class="column">
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=20"><input type="image" src="resources/redFlannel.jpeg" width="200" height="200"/>
        </a>
       </div>
 
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
-       </a>
-      </div>
-
-    </div>
-
-    <div class="column">
-      <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
-       </a>
-      </div>
-
-      <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=24"><input type="image" src="resources/blackPolo.jpeg" width="200" height="200"/>
        </a>
       </div>
 
@@ -233,12 +220,25 @@
 
     <div class="column">
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=28"><input type="image" src="resources/blueCollared.jpeg" width="200" height="200"/>
        </a>
       </div>
 
       <div class="box">
-        <a href="ViewProduct?product=1"><input type="image" src="resources/cargoShorts.jpeg" width="200" height="200"/>
+        <a href="ViewProduct?product=32"><input type="image" src="resources/floralCollared.jpeg" width="200" height="200"/>
+       </a>
+      </div>
+
+    </div>
+
+    <div class="column">
+      <div class="box">
+        <a href="ViewProduct?product=36"><input type="image" src="resources/blackPeacoat.jpeg" width="200" height="200"/>
+       </a>
+      </div>
+
+      <div class="box">
+        <a href="ViewProduct?product=40"><input type="image" src="resources/leatherJacket.jpeg" width="200" height="200"/>
        </a>
       </div>
 

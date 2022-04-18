@@ -14,15 +14,15 @@ public class UserLoginDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		
-		String jdbcURL = "jdbc:mysql://localhost:3306/ShopDB";
-		String dbUser = "root";
-		String dbPassword = "root1234";
+		String jdbcURL = "jdbc:mysql://htiz97hf42xltwv3:sps64uspk6muhrrl@en1ehf30yom7txe7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/io64wq7jxkqkvcbo";
+		String dbUser = "htiz97hf42xltwv3";
+		String dbPassword = "sps64uspk6muhrrl";
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 			
-			String sql = "SELECT * FROM ShopDB.users WHERE username = ? AND password = ?";
+			String sql = "SELECT * FROM io64wq7jxkqkvcbo.users WHERE username = ? AND password = ?";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, username);
 			ps.setString(2, password);

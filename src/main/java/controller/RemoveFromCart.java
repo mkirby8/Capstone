@@ -21,7 +21,6 @@ import model.CartItem;
 public class RemoveFromCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
-	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int pid = Integer.parseInt(request.getParameter("productID"));

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <html>
 <head>
@@ -59,7 +61,7 @@
 		<tr>
 			<td><c:out value="${order.orderID}"/></td>
 			<td><c:out value="${order.username}"/></td>
-			<td>$<c:out value="${order.orderTotal}"/></td>
+			<td>$<fmt:formatNumber type="number" pattern="0.00" value="${order.orderTotal}"/></td>
 			
 		</tr>	
 		</c:forEach>

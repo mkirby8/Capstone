@@ -30,7 +30,6 @@ public class AddToCart extends HttpServlet {
 	}
 
 	
-	@SuppressWarnings("unchecked")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String size = request.getParameter("size");
 		int quantity = Integer.parseInt(request.getParameter("num"));
